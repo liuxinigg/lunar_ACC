@@ -1,0 +1,13 @@
+On each line of the list,
+ column 1: data - datetime of the of the frame in which a PSE command appears in ALSEP command verification word
+ column 2: command - PSE command number
+ column 3: MAP - Message acceptance pulse (MAP) from the verification word (success=1)
+ column 4: date_error - flag, which is set to * when software clock is used, the time string could not be parsed, or the time string is suspected to be in error; otherwise it is set to -
+ column 5: data_error - flag, which is set when sync error is detected for the data frame in which the command verification appears, suggesting that the command verification is suspected to be incorrect
+ columns 6-9: location of the data on tape files, given in tape, file, physical record and logical record numbers. (Tape number 13 for PSE tapes referrs to P & E Supplement tape.)
+ columns 10: station
+
+PSE command numbers (decimal command code, bits 3-9 of command verification word, in parentheses) are as follows:
+ 4 (54): calibration on/off for LP
+
+MAP (bit 10 of command verification word) is set when an error check of received command is successful and the command has been acted upon.
